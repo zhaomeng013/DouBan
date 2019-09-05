@@ -1,0 +1,6 @@
+.git/
+/douban/node_modules/ 
+/douban/*.json
+/douban-server/node_modules/
+/douban-server/*.json
+all.json
