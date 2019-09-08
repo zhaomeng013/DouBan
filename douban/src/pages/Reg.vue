@@ -64,28 +64,35 @@ export default {
             
         },
         reg(){
-            
-            // console.log(this.email)
-            var param = new URLSearchParams();
-            param.append("email",this.email)
-            param.append("passwords",this.passwords)
-            param.append("username",this.userName)
 
-            this.axios({
-                url:"/apis/reg",
-                method:"post",
-                data:param
-            }).then((ok)=>{
-                if(ok.data.msg=="注册成功"){
-                     alert("注册成功")
-                     this.$router.push("/login")
-                }else{
-                    alert("注册失败")
-                }
+
+            // 上传服务器，需删掉后台代码
+            
+            // var param = new URLSearchParams();
+            // param.append("email",this.email)
+            // param.append("passwords",this.passwords)
+            // param.append("username",this.userName)
+
+            // this.axios({
+            //     url:"/apis/reg",
+            //     method:"post",
+            //     data:param
+            // }).then((ok)=>{
+            //     if(ok.data.msg=="注册成功"){
+            //          alert("注册成功")
+            //          this.$router.push("/login")
+            //     }else{
+            //         alert("注册失败")
+            //     }
                
-            },(err)=>{
-                console.log(err)
-            })
+            // },(err)=>{
+            //     console.log(err)
+            // })
+
+
+
+             alert("注册成功")
+            this.$router.push("/login")
         }
     },
 }

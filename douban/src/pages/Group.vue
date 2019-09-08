@@ -2,15 +2,24 @@
     <div class="group">
         <top-nav></top-nav>
         <div class="clear">
-            group
+            
         </div>
+        <!-- <star-elm></star-elm> -->
+        <foot></foot>
     </div>
 </template>
 <script>
 import TopNav from '../components/TopNav'
+// import starElm from '../components/StarElm'
+import foot from '../components/Foot'
+
+
+
 export default {
     components:{
-        TopNav
+        TopNav,
+        // starElm,
+        foot
     }
 }
 </script>

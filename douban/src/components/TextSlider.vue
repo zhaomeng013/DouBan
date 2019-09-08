@@ -1,10 +1,14 @@
 <template>
     <div class="movieList">
-        <div>                           
-                <a  v-for="(v,i) in goodMovie" :key="i"  href="" :style="{'color':v.color}" v-if="!v.line">
-                    {{ v.title }}
-                </a><br v-else>
+        <div>   
+            <a v-for="(v,i) in goodMovie" :key="i"  :href="v.href" :style="{'color':v.color}" v-if="!v.line">
+                {{ v.title }}
+            </a>
+            <br v-else>                  
+               
+                
         </div>
+        
     </div>
 </template>
 <script>
@@ -12,14 +16,26 @@ export default {
     data(){
         return {
             style:{},
-            br:true
+            br:false
         }
     },
     props:{
         goodMovie:{
             type:Array
         }
-    }
+    },
+    computed: {
+        fun(){
+          var arr = this.goodMovie.filter((v,i)=>{
+              if(v.line!=true){
+                  return v
+              }
+          })
+          return arr
+        }
+    },
+   
+
     
 }
 </script>

@@ -8,11 +8,13 @@
             <span></span>
         </span>
         <span class="score">{{score}}</span>
+
     </div>
    
 </template>
 <script>
 export default {
+  
     props:{
         score:{
             type:String

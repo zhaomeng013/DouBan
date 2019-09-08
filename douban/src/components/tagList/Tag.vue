@@ -5,10 +5,7 @@
                 <a href="#">{{v}}</a>
                 <span></span>
             </li>
-            <!-- <li>
-                <a href="#">经典</a>
-                <span></span>
-            </li> -->
+           
         </ul>
        
     </div>

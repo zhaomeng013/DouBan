@@ -9,6 +9,8 @@ import Book from '../pages/Book'
 import Group from '../pages/Group'
 import Market from '../pages/Market'
 import FM from '../pages/FM'
+import Detail from '../pages/Detail'
+
 
 
 
@@ -21,45 +23,50 @@ export default new Router({
   routes: [
    
     {
-      path: '/Login',
+      path: '/login',
       name: 'Login',
       component: Login
     },
     {
-      path: '/Reg',
+      path: '/reg',
       name: 'Reg',
       component: Reg
     },
     {
-      path: '/Index',
+      path: '/',
       name: 'Index',
-      component: Index
+      component: Index,     
     },
     {
-      path: '/Movie',
+      path: '/movie',
       name: 'Movie',
       component: Movie
     },
     {
-      path: '/Book',
+      path: '/book',
       name: 'Book',
       component: Book
     },
     
     {
-      path: '/Group',
+      path: '/group',
       name: 'Group',
       component: Group
     },
     {
-      path: '/Market',
+      path: '/market',
       name: 'Market',
       component: Market
     },
     {
-      path: '/FM',
+      path: '/fm',
       name: 'FM',
       component: FM
+    },
+    {
+      path: '/detail/:id',
+      name: 'Detail',
+      component: Detail
     }
   ]
 })

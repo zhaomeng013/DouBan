@@ -1,28 +1,41 @@
 <template>
     <div>
-        <a class="thumbnail" id="con" v-for="(v,i) in data" :key="i" >
-            <div class="media myMedia" >
-                <div class="media-body">
-                    <h4 class="media-heading">{{v.title|titFilter}}</h4>
-                    <p>{{v.content|conFilter}}</p>
+        <!-- {{data}} -->
+        <a class="thumbnail" id="con"  @click="toDetail()">
+             <!-- <router-link :to="{name:'Detail',params:{id:v.id}}"> -->
+
+             <!-- <a class="thumbnail" id="con"   @click="toDetail()"> -->
+            
+                <div class="media myMedia" >
+                    <div class="media-body">
+                        <h4 class="media-heading">{{data.title|titFilter}}</h4>
+                        <p>{{data.content|conFilter}}</p>
+                    </div>
+                    <div class="media-right media-middle" id="myImg">
+                        <a href="#">
+                            <img class="media-object" :src="data.image">
+                        </a>
+                    </div>
                 </div>
-                <div class="media-right media-middle" id="myImg">
-                    <a href="#">
-                        <img class="media-object" :src="v.image">
-                    </a>
-                </div>
-            </div>
+            
+        
+                <div class="author">{{data.category_name}}</div>
+                <!-- </router-link> -->
+
+    </a>
         
        
-            <div class="author">{{v.category_name}}</div>
-
-        </a>
         
         
     </div>
 </template>
 <script>
 export default {
+    // data(){
+    //     return {
+    //         vid:null
+    //     }
+    // },
     filters:{
         titFilter(val){
             return val.substring(0,20)
@@ -31,11 +44,23 @@ export default {
             return val.substring(0,30)
         }
     },
+    // computed: {
+    //     vid(){
+    //         return this.data.id
+    //     }
+    // },
     props:{
         data:{
-            type:Array
+            type:Object
         }
-    }
+    },
+    methods: {
+        toDetail(){
+            this.$router.push({name:"Detail",params:{id:this.data.id}})
+            console.log(this.data.id)
+        }
+    },
+   
 }
 </script>
 <style scoped>

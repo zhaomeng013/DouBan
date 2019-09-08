@@ -10,7 +10,7 @@
         <text-slider :goodMovie="findMovie"></text-slider>
         
        </div>
-
+    
 
        <tag-list :titObj="movie"></tag-list>
     </div>
@@ -20,6 +20,9 @@ import topNav from '../components/TopNav'
 import singleSlider from '../components/imgSlider/SingleSlider'
 import textSlider from '../components/TextSlider'
 import tagList from '../components/tagList/tagList'
+
+
+
 
 
 

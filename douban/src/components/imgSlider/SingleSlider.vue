@@ -7,8 +7,9 @@
     <div class="slider">
         <slider-content  v-for="(v,i) in movieType" :key="i" class="item" :movieTit="v.title" :movieImg="v.images.small" :movieScore="v.rating.average"></slider-content>
 
-       
+       <!-- {{movieData}} -->
     </div>
+    
 </div>
    
    
@@ -36,58 +37,88 @@ export default {
     },
     computed: {
 
-        //  截取前10条数据---待修改
-        movieList(){
-            var newMovie =this.movieData.filter((v,i)=>{
-                if(i<10){
-                    return v
-                }
-            })
-            return newMovie
-        },
+       
 
         // 通过传入的hTit判断获取movieData的那部分数据
 
         movieType(){
+
             var newMovie=[]
-            if(this.hTit=="影院热映"){
-                newMovie =this.movieData.filter((v,i)=>{
-                if(i<10){
-                    return v
-                }
-            })
-            }else if(this.hTit=="免费在线观影"){
-                newMovie =this.movieData.filter((v,i)=>{
-                if(i>10 && i<20){
-                    return v
-                }
-            })
-            }else if(this.hTit=="新片速递"){
-                newMovie =this.movieData.filter((v,i)=>{
-                if(i>20 && i<30){
-                    return v
-                }
-            })
+            switch(this.hTit){
+                case "影院热映":  newMovie =this.movieData.filter((v,i)=>{
+                                    if(i<10){
+                                        return v
+                                    }
+                                });break
+                case "免费在线观影" :  newMovie =this.movieData.filter((v,i)=>{
+                                    if(i>10 && i<20){
+                                        return v
+                                    }
+                                });break
+                case "新片速递" :  newMovie =this.movieData.filter((v,i)=>{
+                                    if(i>20 && i<30){
+                                        return v
+                                    }
+                                });break
+
+
+                case "豆瓣纸书" :  newMovie =this.movieData.filter((v,i)=>{
+                                    if(i<5){
+                                        return v
+                                    }
+                                });break
+
+                
+                case "最受关注图书｜虚构类" :  newMovie =this.movieData.filter((v,i)=>{
+                                    if(i>5 && i<11){
+                                        return v
+                                    }
+                                });break
+                case "最受关注图书｜非虚构类" :  newMovie =this.movieData.filter((v,i)=>{
+                                    if(i>12 && i<18){
+                                        return v
+                                    }
+                                });break
+                
+                default:newMovie=[];break;
             }
+
+
+            
+            // if(this.hTit=="影院热映"){
+            //     newMovie =this.movieData.filter((v,i)=>{
+            //     if(i<10){
+            //         return v
+            //     }
+            // })
+            // }else if(this.hTit=="免费在线观影"){
+            //     newMovie =this.movieData.filter((v,i)=>{
+            //     if(i>10 && i<20){
+            //         return v
+            //     }
+            // })
+            // }else if(this.hTit=="新片速递"){
+            //     newMovie =this.movieData.filter((v,i)=>{
+            //     if(i>20 && i<30){
+            //         return v
+            //     }
+            // })
+            // }else if(this.hTit=="豆瓣纸书"){
+            //     newMovie =this.movieData.filter((v,i)=>{
+            //     if(i<10){
+            //         return v
+            //     }
+            // })
+            // }
             return newMovie
         }
-    },
-    created() {
-        // this.axios({
-        //     url:"/movie",
-        //     method:"get"
-        // }).then((data)=>{
-        //     console.log(data.data.movie)
-        //     this.movie = data.data.movie
-        // },(err)=>{
-        //     console.log(err)
-        // })
     }
+    
 }
 </script>
 <style scoped>
 .sliderBox{
-    margin-top: .2rem;
+    margin-top: .1rem;
 }
 h3{
     width: 100%;

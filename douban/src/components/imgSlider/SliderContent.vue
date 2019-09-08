@@ -6,15 +6,18 @@
         
 
     </a>
-    <star :score="movieS"></star>
+    <!-- <star :score="movieS"></star> -->
+    <star-elm :elmScore="movieScore"></star-elm>
 </div>
    
 </template>
 <script>
-import star from './Star'
+// import star from './Star'
+import starElm from '../StarElm'
 export default {
     components:{
-        star
+        // star,
+        starElm
     },
     props:{
         movieImg:{
@@ -26,13 +29,13 @@ export default {
             required:true
         },
         movieScore:{
-            type:Number,
+            // type:Number,
             required:true
         }
 
     },
     computed: {
-        //处理换行
+        //截取电影名字
         movieT(){
             if(this.movieTit.length>6){
                 return this.movieTit.substring(0,6)+"..."

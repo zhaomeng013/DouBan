@@ -4,11 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
 //引入axios
 
 import axios from 'axios'
 Vue.prototype.axios = axios
-
+Vue.use(ElementUI);
 
 //引入mock模拟数据
 
@@ -31,6 +34,7 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  render: h => h(App)
 })
 

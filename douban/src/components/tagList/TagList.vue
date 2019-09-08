@@ -3,6 +3,7 @@
         <h3>分类浏览</h3>
         
         <tag :geners="tit"></tag>
+        <p>{{tit}}</p>
     </div>
 </template>
 <script>
@@ -13,20 +14,19 @@ export default {
     },
     props:{
         titObj:{
-            type:Array,
-            required:true
+            type:Array
+            // required:true
         }
     },
     computed: {
         tit(){
             var arr=[]
             for(var i in this.titObj){
-
-                // 遍历的同时去重
+                        // 遍历的同时去重
                 if(arr.indexOf(this.titObj[i].genres[0])<0){
                     arr.push(this.titObj[i].genres[0])
                 }
-                
+            
             }
            
             return arr

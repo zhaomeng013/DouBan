@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="topNav">
-        <router-link to="Index" class="logo"><img src="../../static/img/logo.png" alt=""></router-link>
+        <router-link to="/" class="logo"><img src="../../static/img/logo.png" alt=""></router-link>
         
         <ul>
             <li><router-link to="/Movie" style="color: rgb(35, 132, 232)">电影</router-link></li>
@@ -39,6 +39,7 @@ export default {
     position: fixed;
     left: 0rem;
     top: 0;
+    z-index: 100;
     width: 100%;
     height: 0.49rem;
     background-color: #fff;

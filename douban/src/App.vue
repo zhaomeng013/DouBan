@@ -1,21 +1,18 @@
 <template>
   <div id="app">
-    <!-- <topNav></topNav> -->
     <router-view/>
-    <foot></foot>
+
+
+    
   </div>
 </template>
 
 <script>
-// import topNav from './components/topNav'
-import foot from './components/Foot'
 
 
 export default {
   name: 'App',
   components:{
-    // topNav
-    foot
   }
   //  directives:{
   //       focus:{

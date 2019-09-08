@@ -13,7 +13,13 @@
             <!-- 等待图片 -->
             <img class="loading" src="../../static/img/loading.gif" v-if="dataList.length<=0">
 
-            <media-object :data=dataList v-else></media-object>
+            <div v-else>
+                <!-- <media-object :data="dataList" ></media-object> -->
+
+                <media-object v-for="(v,i) in dataList" :key="i" :data="v"></media-object>
+
+            </div>
+
             <!-- <menu-nav v-show="isMenu"></menu-nav> -->
 
             

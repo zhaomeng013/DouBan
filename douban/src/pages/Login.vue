@@ -52,35 +52,40 @@ export default {
         },
         //点击logo返回
         back(){
-            this.$router.push("/index")
+            this.$router.push("/")
         },
 
         // 登录按钮
         login(){
-            var param = new URLSearchParams();
-            param.append("email",this.email)
-            param.append("passwords",this.token)
 
-            this.axios({
-                url:"/apis/login",
-                method:"post",
-                data:param
+            // 上传服务器，需删掉后台代码
+            // var param = new URLSearchParams();
+            // param.append("email",this.email)
+            // param.append("passwords",this.token)
 
-            }).then((ok)=>{
+            // this.axios({
+            //     url:"/apis/login",
+            //     method:"post",
+            //     data:param
 
-                if(ok.data.msg=="登录成功"){
-                    alert("登录成功")
-                    this.$router.push("/index")
-                }else{
-                    alert("账户名或密码错误")
-                }
+            // }).then((ok)=>{
+
+            //     if(ok.data.msg=="登录成功"){
+            //         alert("登录成功")
+            //         this.$router.push("/index")
+            //     }else{
+            //         alert("账户名或密码错误")
+            //     }
                 
-                console.log(ok)
-            },(err)=>{
-                console.log(err)
-            })
+            //     console.log(ok)
+            // },(err)=>{
+            //     console.log(err)
+            // })
 
-           
+
+
+            alert("登录成功")
+            this.$router.push("/")
         }
     },
     components:{
