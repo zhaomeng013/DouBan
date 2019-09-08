@@ -15,3 +15,7 @@ Mock.mock("/book","get",require("./json/book"))
 
 // 3.1 发现好图书接口
 Mock.mock("/goodBook","get",require("./json/goodBook"))
+
+
+// 4 小组数据接口
+Mock.mock("/group","get",require("./json/group"))

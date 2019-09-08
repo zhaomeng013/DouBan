@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <!-- <top-search></top-search> -->
         <top-nav></top-nav>
 
         <div class="con clear">
@@ -33,7 +33,7 @@
 // })
 import topNav from '../components/TopNav'
 import mediaObject from '../components/MediaObject'
-// import menuNav from '../components/MenuNav'
+// import topSearch from '../components/TopSearch'
 
 
 export default {
@@ -46,7 +46,7 @@ export default {
     components:{
         topNav,
         mediaObject,
-        // menuNav
+        // topSearch
     },
     created() {
         this.axios({

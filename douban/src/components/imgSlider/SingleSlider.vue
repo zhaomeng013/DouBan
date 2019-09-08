@@ -46,36 +46,36 @@ export default {
             var newMovie=[]
             switch(this.hTit){
                 case "影院热映":  newMovie =this.movieData.filter((v,i)=>{
-                                    if(i<10){
+                                    if(i<8){
                                         return v
                                     }
                                 });break
                 case "免费在线观影" :  newMovie =this.movieData.filter((v,i)=>{
-                                    if(i>10 && i<20){
+                                    if(i>8 && i<14){
                                         return v
                                     }
                                 });break
                 case "新片速递" :  newMovie =this.movieData.filter((v,i)=>{
-                                    if(i>20 && i<30){
+                                    if(i>12 && i<20){
                                         return v
                                     }
                                 });break
 
 
-                case "豆瓣纸书" :  newMovie =this.movieData.filter((v,i)=>{
+                case "最受关注图书｜虚构类" :  newMovie =this.movieData.filter((v,i)=>{
                                     if(i<5){
                                         return v
                                     }
                                 });break
 
                 
-                case "最受关注图书｜虚构类" :  newMovie =this.movieData.filter((v,i)=>{
+                case "豆瓣纸书" :  newMovie =this.movieData.filter((v,i)=>{
                                     if(i>5 && i<11){
                                         return v
                                     }
                                 });break
                 case "最受关注图书｜非虚构类" :  newMovie =this.movieData.filter((v,i)=>{
-                                    if(i>12 && i<18){
+                                    if(i>11 && i<18){
                                         return v
                                     }
                                 });break

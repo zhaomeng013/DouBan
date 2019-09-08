@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="topNav">
-        <router-link to="/" class="logo"><img src="../../static/img/logo.png" alt=""></router-link>
+        <router-link to="/" class="logo"><img src="../../static/img/logo.png" alt="" v-if="!isMenu"></router-link>
         
         <ul>
             <li><router-link to="/Movie" style="color: rgb(35, 132, 232)">电影</router-link></li>
@@ -9,17 +9,19 @@
             <li><router-link to="/FM" style="color: rgb(228, 168, 19);">广播</router-link></li>
             <li><router-link to="/Group" style="color: rgb(42, 184, 204);">小组</router-link></li>
         </ul>
-        <img class="menu" src="../../static/img/menu.png" @click="showMenu()">
+        <img class="menu" src="../../static/img/menu.png" @click="showMenu()" >
     </div>
-
+    
+    <top-search v-show="isMenu" @hide="fun()"></top-search>
     
 </div>
 </template>
 <script>
-import menuNav from '../components/MenuNav'
+import topSearch from './routerList/TopSearch'
+
 export default {
     components:{
-        menuNav
+        topSearch
     },
     data(){
         return {
@@ -28,9 +30,14 @@ export default {
     },
     methods: {
         showMenu(){
-            this.isMenu=!this.isMenu
-            console.log("dsdd")
+            this.isMenu=true
+            
+            
+        },
+        fun(val){
+            this.isMenu=val
         }
+       
     },
 }
 </script>
@@ -78,4 +85,6 @@ ul>li{
     margin-right: 0.12rem;
     line-height: 0.48rem;
 }
+
+
 </style>

@@ -13,6 +13,7 @@
     
 
        <tag-list :titObj="movie"></tag-list>
+       <foot></foot>
     </div>
 </template>
 <script>
@@ -20,6 +21,7 @@ import topNav from '../components/TopNav'
 import singleSlider from '../components/imgSlider/SingleSlider'
 import textSlider from '../components/TextSlider'
 import tagList from '../components/tagList/tagList'
+import foot from '../components/Foot'
 
 
 
@@ -43,7 +45,8 @@ export default {
         // 发现好电影
         textSlider,
         // 分类浏览
-        tagList
+        tagList,
+        foot
     },
     created() {
         //请求前面三个电影接口

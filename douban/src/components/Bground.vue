@@ -45,17 +45,17 @@ export default {
     padding: 0 .14rem;
     line-height: 0.26rem;
     border-radius: .03rem;
+    box-sizing: border-box;
     
 }
 .bgRight>span:first-child{
     color: #fff;
     background-color:  #42bd56;
    
-    
-    
 }
 .bgRight>span:last-child{
     border: .01rem solid #42bd56;
+    height: 0.26rem;
 
 }
 </style>
